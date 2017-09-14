@@ -1,10 +1,19 @@
 import { CommonModule } from '@angular/common'
 import { NgModule, ModuleWithProviders, Provider } from '@angular/core'
+import { BenchmarkService } from './services/benchmark.service'
+import { DOCUMENT } from './dom/document.token'
+export { DOCUMENT } from './dom/document.token'
+export { BenchmarkService } from './services/benchmark.service'
 
 @NgModule({
   imports: [CommonModule],
-  //declarations: [],
-  //providers: [ ],
+  providers: [ 
+    BenchmarkService,
+    {
+      provide: DOCUMENT,
+      useValue: window.document
+    }
+  ],
   //entryComponents: [],
   exports: [CommonModule]
 })
