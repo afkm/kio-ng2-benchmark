@@ -1,0 +1,55 @@
+<div class="big-pic" id="top">
+
+    <div class="big-pic__date">
+        <div class="inner">
+            <p>
+                <publication-simple-text [node]="dateNode"></publication-simple-text>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="big-pic__title">
+
+        <div class="inner">
+
+            <h2>
+
+                <span class="big-pic__digit-title">
+                    <publication-image [node]="headingAsImageNode"></publication-image>
+                    <span>
+                        <publication-simple-text [node]="headingNode"></publication-simple-text>
+                    </span>
+
+                </span>
+
+                <span class="big-pic__digit-subtitle">
+                    <publication-simple-text [node]="subHeadingNode"></publication-simple-text>
+                </span>
+
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="big-pic__image back">
+        <publication-image [node]="imageNodeBack" [viewParams]="{'fixedHeight': true, 'fixedWidth' : true, cropStrategy : 'center'}"></publication-image>
+    </div>
+
+    <!-- <div class="big-pic__image front">
+        <publication-image [node]="imageNodeFront" [viewParams]="{'fixedHeight': true, 'fixedWidth' : true, cropStrategy : 'center', fallbackFormat : 'png'}"></publication-image>
+    </div> -->
+
+
+    <div class="big-pic__action">
+        <a pageScroll href="#big-pic-end">
+            <ui-button [icon]="'enter'"></ui-button>
+        </a>
+    </div>
+
+
+    <div id="big-pic-end"></div>
+
+</div>

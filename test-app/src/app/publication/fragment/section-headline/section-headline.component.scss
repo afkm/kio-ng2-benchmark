@@ -1,0 +1,87 @@
+@import "../../../../scss/utils";
+
+
+.section-headline {
+    padding-top: rem-calc(400);
+    padding-bottom: $row-gutter*1.5;
+
+    background-color: $color-background-default;
+    background-image: url(/assets/images/pattern-1.svg);
+    background-repeat: repeat-x;
+    background-position: center top;
+    background-size: auto rem-calc(400);
+
+    @extend %default-paddings;
+
+    @media #{$small-only} {
+        overflow: hidden;
+    }
+
+    @media #{$medium-up} {
+        padding-top: rem-calc(680);
+        padding-bottom: $row-gutter*2.5;
+
+        background-size: auto rem-calc(680);
+    }
+
+    .outer {
+        @extend %g-row;
+    }
+    .inner {
+        width: 100%;
+
+        @extend %g-col;
+
+        @media #{$medium-up} {
+            width: column-calc(7);
+            margin-left: column-calc(1);
+        }
+    }
+
+    h2 {
+        margin: rem-calc(-80) $column-gutter*-1 0;
+        margin: $column-gutter*-1;
+        padding: $row-gutter*10 $column-gutter;
+
+        text-align: center;
+        text-transform: uppercase;
+        hyphens: auto;
+
+        color: $color-font-bright;
+        background: $color-background-dark;
+
+        font-size: rem-calc(70);
+        line-height: 1;
+
+        @extend %default-serif;
+        @media #{$medium-up} {
+            margin: rem-calc(-200) auto 0;
+            padding: $row-gutter*2 $column-gutter*4;
+
+            font-size: rem-calc(125);
+        }
+
+        span {
+            position: relative;
+
+            display: block;
+
+            height: rem-calc(3);
+            margin: $row-gutter*1.5 0;
+
+            background: $color-background-bright;
+
+            @extend %diamond-before;
+            @extend %diamond-after;
+        }
+
+        small {
+            display: block;
+
+            font-size: rem-calc(36);
+            @media #{$medium-up} {
+                font-size: rem-calc(72);
+            }
+        }
+    }
+}

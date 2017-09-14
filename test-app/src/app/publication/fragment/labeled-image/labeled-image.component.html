@@ -1,0 +1,34 @@
+<figure class="labeled-image" [ngClass]="{'portrait' : imageRatio < 1, 'is-stripped' : stripStyles, 'is-not-stripped' : !stripStyles, 'is-in-viewport' : isInViewport}" #scrollTarget>
+
+    <div class="outer">
+
+        <div class="inner">
+
+            <div class="images-container" *ngIf="!!imageNode">
+
+                <ng-container *ngIf="!!lightbox">
+                    <lightbox-link [group]="lightboxGroup" [node]="node">
+                        <publication-image (load)="onImageLoad()" [viewParams]="viewParams" [node]="imageNode" ctnContentLoader></publication-image>
+                    </lightbox-link>
+                </ng-container>
+
+                <ng-container *ngIf="!lightbox">
+                    <publication-image (load)="onImageLoad()" [viewParams]="viewParams" [node]="imageNode" ctnContentLoader></publication-image>
+                </ng-container>
+
+                <figcaption (click)="showMeta = !showMeta" [ngClass]="{'has-meta' : hasMeta}">
+
+                    <publication-formatted-text [node]="captionNode"></publication-formatted-text>
+
+                    <span class="meta" [hidden]="!(hasMeta && showMeta)">
+                        <publication-simple-text (onData)="setupMeta($event)" [node]="metaNode"></publication-simple-text>
+                    </span>
+
+                </figcaption>
+
+            </div>
+
+        </div>
+    </div>
+
+</figure>

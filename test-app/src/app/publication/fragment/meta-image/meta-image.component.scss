@@ -1,0 +1,143 @@
+@import "../../../../scss/utils";
+
+
+.meta-image {
+
+    &.is-not-stripped {
+        padding-bottom: $row-gutter*3;
+
+        background: $color-background-default;
+
+        @extend %reduced-paddings;
+
+        @media #{$medium-up} {
+            padding-bottom: $row-gutter*5;
+        }
+
+        figure {
+            @extend %g-row;
+            @media #{$small-only} {
+                // we need a little bit more space for the button
+                padding-right: $column-gutter;
+                padding-left: $column-gutter;
+            }
+
+            > div {
+                width: 100%;
+
+                @extend %g-col;
+                @media #{$medium-up} {
+                    width: column-calc(4);
+                    margin-left: column-calc(3);
+                }
+            }
+        }
+    }
+
+    figcaption {
+        position: relative;
+
+        h3 {
+            margin-bottom: $row-gutter*1.5;
+
+            :host /deep/ & publication-simple-text * {
+                text-transform: uppercase;
+
+                font-size: rem-calc(14);
+                line-height: 1;
+
+                @extend %default-sans-serif;
+            }
+        }
+
+        :host /deep/ & kio-markdown p {
+            text-transform: none;
+
+            font-size: rem-calc(20);
+
+            @media #{$medium-up} {
+                font-size: rem-calc(24);
+            }
+        }
+    }
+}
+
+.meta-image__image {
+    position: relative;
+}
+
+.meta-image__body {
+    position: relative;
+
+    background: $color-background-bright;
+
+    .inner {
+        overflow: hidden;
+
+        height: 0;
+
+        transition: height 0.2s ease-out 0s;
+
+        will-change: height;
+
+        > div {
+            padding: rem-calc(10) $column-gutter*1.5 $row-gutter;
+
+            @media #{$small-only} {
+                min-height: 0 !important;
+            }
+
+            @media #{$medium-up} {
+                padding: rem-calc(10) $column-gutter*2 $row-gutter*2;
+            }
+        }
+    }
+
+    .meta {
+        padding: 0 $column-gutter*1 $row-gutter;
+
+        text-transform: none;
+
+        @extend %default-serif-italic;
+
+        @media #{$medium-up} {
+            padding: 0 $column-gutter*2 $row-gutter*2;
+        }
+
+        &:not([hidden]) {
+            display: block;
+        }
+    }
+}
+
+.meta-image__button {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+
+    transition: transform 0.1s ease-out 0s;
+    transform: translate(40%, -50%);
+
+    line-height: 0;
+
+    will-change: transform;
+    @media #{$medium-up} {
+        transform: translate(50%, -50%);
+    }
+
+    &:hover {
+        transform: translate(40%, -50%) rotate(10deg);
+
+        @media #{$medium-up} {
+            transform: translate(50%, -50%) rotate(10deg);
+        }
+    }
+
+    .is-open & {
+        transform: translate(40%, -50%) rotate(45deg);
+        @media #{$medium-up} {
+            transform: translate(50%, -50%) rotate(45deg);
+        }
+    }
+}

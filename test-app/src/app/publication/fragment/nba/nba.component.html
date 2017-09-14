@@ -1,0 +1,22 @@
+<div class="nba" *ngIf="node" [attr.data-cuid]="node?.cuid">
+    <h3>
+        <publication-simple-text [node]="node.childAt(0)"></publication-simple-text>
+    </h3>
+    <figure>
+        <div class="image">
+            <div>
+                <a [href]="linkUrl" target="_blank">
+                    <publication-image [withPreview]="false" [initialScale]="1" [node]="node.childAt(1)" [viewParams]="{fixedHeight: true, fixedWidth: true}"></publication-image>
+                </a>
+            </div>
+        </div>
+        <figcaption>
+            <publication-simple-text [node]="node.childAt(2)"></publication-simple-text>
+        </figcaption>
+    </figure>
+    <publication-simple-text [hidden]="true" (onData)="onLinkData($event)" [node]="linkTxtNode"></publication-simple-text>
+    <a target="_blank" class="cta" [href]="linkUrl">
+        <publication-simple-text [node]="node.childAt(3)"></publication-simple-text>
+        <!-- <ui-button [icon]="'arrow-plain'"></ui-button> -->
+    </a>
+</div>

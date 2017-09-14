@@ -1,0 +1,59 @@
+@import "../../../../scss/utils";
+
+
+.sponsoring-partner {
+    padding: $row-gutter*3 0 $row-gutter*1.5;
+
+    background: $color-background-footer;
+
+    > .outer {
+        @extend %g-row;
+        > .inner {
+            width: 100%;
+
+            @extend %g-col;
+            @media #{$medium-up} {
+                width: column-calc(6);
+            }
+            @media #{$large-up} {
+                width: column-calc(4);
+            }
+        }
+    }
+
+    * {
+        color: $color-font-bright;
+
+        font-size: rem-calc(18);
+
+        @extend %default-sans-serif;
+
+        @media #{$medium-only} {
+            font-size: rem-calc(24);
+        }
+    }
+
+    .image {
+        margin-top: $row-gutter;
+        @media #{$medium-up} {
+            margin-right: column-calc(3);
+        }
+    }
+
+    publication-image .image-container {
+        height: auto !important;
+        // we break the rules due to the nature of svg-image
+
+        background: transparent !important;
+
+        img {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: auto;
+        }
+    }
+
+}

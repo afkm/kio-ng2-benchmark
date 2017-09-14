@@ -14,7 +14,7 @@
   },
 
   "files": [
-    "build/module.ts"
+    "build/benchmark.module.ts"
   ],
 
   "angularCompilerOptions": {

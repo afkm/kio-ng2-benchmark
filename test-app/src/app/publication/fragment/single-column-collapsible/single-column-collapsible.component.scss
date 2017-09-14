@@ -1,0 +1,72 @@
+@import "../../../../scss/utils";
+
+
+.single-column-collapsible {
+    background: $color-background-default;
+
+    @extend %reduced-paddings;
+
+    > .outer {
+        @extend %g-row;
+
+        > .inner {
+            @extend %g-col;
+
+            @media #{$medium-up} {
+                width: column-calc(7);
+                margin-left: column-calc(2);
+            }
+        }
+    }
+
+    :host /deep/ & publication-formatted-text * {
+        color: $color-font-bright;
+    }
+}
+
+.single-column-collapsible__collapsible {
+
+    label {
+        display: block;
+        overflow: hidden;
+
+        max-height: 0;
+
+        transition: max-height 0.2s ease-out 0s;
+
+        will-change: max-height;
+
+        span {
+            display: block;
+
+            padding: $row-gutter 0;
+
+            text-align: center;
+            text-transform: uppercase;
+
+            color: $color-font-bright;
+
+            font-size: rem-calc(26);
+            line-height: 2;
+
+            @extend %default-serif;
+            @media #{$medium-up} {
+                font-size: rem-calc(36);
+            }
+        }
+
+        .is-collapsed & {
+            max-height: rem-calc(200);
+        }
+    }
+
+    .container {
+        overflow: hidden;
+
+        height: 0;
+
+        transition: height 0.3s ease-out 0s;
+
+        will-change: height;
+    }
+}

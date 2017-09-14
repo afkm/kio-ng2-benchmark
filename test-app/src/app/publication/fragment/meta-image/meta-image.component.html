@@ -1,0 +1,47 @@
+<div class="meta-image" [ngClass]="{'is-open' : isOpen, 'is-stripped' : stripStyles, 'is-not-stripped' : !stripStyles}">
+
+
+    <figure>
+
+        <div>
+
+            <div class="meta-image__image">
+                <publication-image [node]="imageNode"></publication-image>
+            </div>
+
+
+            <div class="meta-image__body">
+
+                <div class="meta-image__button">
+                    <ui-button [icon]="'plus-circle'" (click)="toggleOpen()" ></ui-button>
+                </div>
+
+
+                <div class="inner" [style.height]="bodyHeight + 'px'">
+                    <div #metaImageInner [style.minHeight]="minBodyHeight + 'px'">
+
+                        <figcaption (click)="showMeta = !showMeta; updateInnerHeight()" [ngClass]="{'has-meta' : hasMeta}">
+
+                            <h3>
+                                <publication-simple-text [node]="headingNode" (onData)="updateInnerHeight()"></publication-simple-text>
+                            </h3>
+
+                            <publication-formatted-text [node]="textNode" (onData)="updateInnerHeight()"></publication-formatted-text>
+
+                        </figcaption>
+                    </div>
+                </div>
+
+                <span class="meta" [hidden]="!(hasMeta && showMeta && isOpen)">
+                    <publication-simple-text (onData)="setupMeta($event)" [node]="metaNode"></publication-simple-text>
+                </span>
+
+            </div>
+
+        </div>
+
+    </figure>
+
+
+
+</div>

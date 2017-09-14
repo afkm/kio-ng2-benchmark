@@ -1,0 +1,137 @@
+@import "../../../../scss/utils";
+
+
+.share {
+
+    ul.share-links {
+        display: flex;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        li {
+            flex: 1;
+        }
+
+        .ui-button {
+            width: rem-calc(45);
+            height: rem-calc(45);
+
+            @media #{$medium-only} {
+                width: rem-calc(60);
+                height: rem-calc(60);
+            }
+
+            svg {
+                path {
+                    fill: $color-font-bright;
+                }
+            }
+        }
+    }
+
+    .share--bottom {
+        padding: $row-gutter*2 0;
+
+        border-bottom: 1px solid rgba($color-background-bright, 0.5);
+        background: $color-background-footer;
+
+        > .inner {
+            @extend %g-row;
+
+            > div {
+                @extend %g-col;
+            }
+
+            > .col-1 {
+                width: column-calc(4);
+                margin-left: column-calc(1);
+            }
+            > .col-2 {
+                width: column-calc(5);
+                margin-left: column-calc(2);
+            }
+        }
+
+        @media #{$small-only} {
+            display: none;
+        }
+        .kio-sidebar & {
+            display: none;
+        }
+
+        ul.share-links {
+            padding-top: $row-gutter*1.7;
+        }
+    }
+
+    .share-claim {
+        margin-bottom: 0;
+
+        text-transform: uppercase;
+
+        color: $color-font-bright;
+
+        font-size: rem-calc(32);
+        line-height: (40/32);
+
+        @extend %default-sans-serif-bold;
+        em {
+            color: $color-font-dark;
+
+            @extend %default-sans-serif-black;
+        }
+
+    }
+
+    .share--sidebar {
+        display: none;
+
+        padding: $row-gutter $column-gutter;
+
+        border-top: 1px solid rgba($color-font-bright, 0.5);
+        border-bottom: 1px solid rgba($color-font-bright, 0.5);
+        background: $color-background-sidebar;
+
+        h3 {
+            color: $color-font-bright;
+
+            font-size: rem-calc(18);
+            font-weight: normal;
+
+            @extend %default-sans-serif;
+
+            @media #{$medium-only} {
+                font-size: rem-calc(24);
+            }
+        }
+
+        ul.share-links {
+            display: block;
+
+            @extend %clearfix;
+
+            li {
+                float: left;
+
+                margin-right: $column-gutter;
+            }
+
+            .ui-button {
+                width: rem-calc(30);
+                height: rem-calc(30);
+
+                @media #{$medium-only} {
+                    width: rem-calc(40);
+                    height: rem-calc(40);
+                }
+            }
+        }
+
+        .kio-sidebar & {
+            display: block;
+        }
+    }
+}

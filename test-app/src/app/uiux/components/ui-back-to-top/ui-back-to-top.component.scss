@@ -1,0 +1,67 @@
+@import '../../../../scss/utils';
+
+
+.ui-back-to-top {
+    background: $color-background-footer;
+
+    > .inner {
+        max-width: $container-width;
+        margin: 0 auto;
+        padding: $row-gutter*8 $column-gutter 0;
+
+        @media #{$medium-up} {
+            text-align: right;
+        }
+    }
+
+
+    @media #{$medium-up} {
+        margin-bottom: $row-gutter*-5.3;
+    }
+
+    .to-top {
+        display: inline-block;
+
+        margin-bottom: $row-gutter;
+        padding: .8rem 0 0;
+
+        text-transform: uppercase;
+
+        color: $color-font-bright;
+
+        font-size: 2rem;
+
+        @extend %default-sans-serif;
+
+        :host /deep/ & .ui-button {
+            position: relative;
+            top: rem-calc(2);
+
+            width: rem-calc(40);
+            height: rem-calc(29);
+            margin-left: rem-calc(5);
+
+            background: transparent;
+
+            svg {
+                path {
+                    fill: $color-font-bright;
+                }
+            }
+        }
+
+        &:hover {
+            color: $color-font-bright;
+            background: $color-background-footer;
+
+            .ui-button {
+
+                svg {
+                    path {
+                        fill: $color-font-bright;
+                    }
+                }
+            }
+        }
+    }
+}

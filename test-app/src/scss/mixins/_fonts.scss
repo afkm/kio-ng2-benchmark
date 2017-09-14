@@ -1,0 +1,34 @@
+%default-sans-serif {
+  font-family: 'schirn', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+%default-sans-serif-bold {
+    font-family: 'schirn', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+%default-sans-serif-black {
+  font-family: 'schirn', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+%default-sans-serif-italic {
+    font-family: 'schirn', sans-serif;
+    font-weight: normal;
+    font-style: italic; // faux
+}
+
+%default-serif {
+  font-family: 'belleroselight', serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+%default-serif-italic {
+  font-family: 'belleroselight', serif;
+  font-weight: normal;
+  font-style: italic; // faux
+}

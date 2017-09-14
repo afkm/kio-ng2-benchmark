@@ -1,0 +1,67 @@
+@import "../../../../scss/utils";
+
+
+.video {
+    background: $color-background-default;
+
+    @extend %default-paddings;
+
+    .outer {
+        @extend %g-row;
+    }
+
+    .inner {
+        width: 100%;
+
+        @extend %g-col;
+
+        @media #{$medium-up} {
+            width: column-calc(8);
+            margin-left: column-calc(2);
+        }
+    }
+}
+
+.video__headline {
+    // padding-right: 0;
+    @extend %wmr-underlined-headline;
+}
+
+.video__embed {
+    position: relative;
+
+    margin-top: $row-gutter;
+    padding-top: (360/640) * 100%;
+
+    @media #{$medium-up} {
+        margin-top: $row-gutter*2;
+    }
+
+    :host /deep/ & iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.video__playbutton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    :host /deep/ & .ui-button {
+        width: rem-calc(130);
+        height: rem-calc(130);
+
+        @media #{$medium-up} {
+            width: rem-calc(200);
+            height: rem-calc(200);
+        }
+    }
+}

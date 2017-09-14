@@ -1,0 +1,267 @@
+@import '../utils';
+
+
+/* =====================
+Typography
+===================== */
+//
+
+
+body {
+    color: $color-font-dark;
+
+    line-height: $global-line-height;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @extend %default-sans-serif;
+    font-variant-numeric: lining-nums;
+    -moz-font-feature-settings: "lnum";
+    -webkit-font-feature-settings: "lnum";
+    font-feature-settings: "lnum";
+
+    @media #{$medium-up} {
+        line-height: $global-line-height-desktop;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 $row-gutter*2;
+
+    font-weight: normal;
+
+    @extend %default-sans-serif-bold;
+
+    > b,
+    > strong {
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+
+h1, h2, h3, h4, h5, h6,
+p, li, address, blockquote, dl,
+figcaption {
+    margin: 0 0 $row-gutter;
+
+    font-size: rem-calc(20);
+    font-weight: normal;
+
+    @media #{$medium-up} {
+        font-size: rem-calc(32);
+    }
+
+    @media #{$large-up} {
+        font-size: rem-calc(24);
+    }
+
+    em, i {
+        @extend %default-sans-serif-italic;
+    }
+}
+
+p, li, address, blockquote, dl,
+figcaption {
+
+    > b,
+    > strong,
+    > a > b,
+    > a > strong {
+        @extend %default-sans-serif-bold;
+    }
+}
+
+ul,
+ol {
+    li {
+        margin-bottom: rem-calc(5);
+    }
+}
+
+dl {
+    dt, dd {
+        display: inline-block;
+
+        margin: 0;
+    }
+    dt {
+        @extend %default-sans-serif-bold;
+    }
+
+    dd {
+        display: inline;
+        &:after {
+            content:"\a";
+            white-space: pre;
+        }
+    }
+}
+
+b, strong {
+    font-weight: normal;
+}
+
+em, i {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+
+    color: $color-font-dark;
+
+    p &,
+    li & {
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+            opacity: 0.75;
+        }
+    }
+}
+
+blockquote{
+
+    > p {
+        margin-bottom: 1em;
+
+        text-transform: uppercase;
+
+        color: $color-font-dark;
+
+        font-size: rem-calc(28);
+        line-height: 1.2;
+
+        @extend %default-sans-serif-black;
+
+        @media #{$medium-up} {
+            font-size: rem-calc(48);
+        }
+    }
+
+    cite,
+    cite p {
+        display: block;
+
+        text-transform: uppercase;
+
+        font-size: rem-calc(17);
+        line-height: 1;
+
+        @extend %default-sans-serif-black;
+
+        @media #{$medium-up} {
+            text-align: right;
+
+            font-size: rem-calc(30);
+        }
+    }
+
+    cite p {
+        margin: 0;
+        padding: 0;
+    }
+
+    cite.has-meta {
+        cursor: pointer;
+
+        &:before {
+            margin-top: rem-calc(4);
+
+            color: $color-font-dark !important;
+            border-color: $color-font-dark !important;
+
+            @extend %credits-info;
+        }
+
+        .meta {
+            padding-top: rem-calc(10);
+
+            font-size: 0.75em;
+
+            * {
+                text-transform: none;
+
+                @extend %default-sans-serif;
+            }
+
+            &:not([hidden]) {
+                display: block;
+            }
+        }
+    }
+}
+
+address{
+    font-style: normal;
+}
+
+img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+figure{
+    margin: 0;
+}
+
+figcaption {
+    display: block;
+
+    margin: 0;
+    padding: rem-calc(2) 0;
+
+    * {
+        margin: 0;
+
+        text-transform: uppercase;
+
+        font-size: rem-calc(14);
+
+        @extend %default-sans-serif;
+
+        @media #{$medium-only} {
+            font-size: rem-calc(19);
+        }
+    }
+
+    &.has-meta,
+    > div.has-meta {
+        cursor: pointer;
+
+        &:before {
+            @extend %credits-info;
+        }
+
+        .meta {
+            padding-top: rem-calc(10);
+
+            * {
+                text-transform: none;
+            }
+
+            &:not([hidden]) {
+                display: block;
+            }
+        }
+    }
+}
+
+
+hr{
+    margin: $row-gutter*2 0;
+
+    border: none;
+    border-top: 1px solid $color-font-dark;
+}
+
+iframe{
+    width: 100%;
+
+    border: none;
+}

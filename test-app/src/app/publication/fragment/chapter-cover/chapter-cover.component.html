@@ -1,0 +1,38 @@
+<div class="chapter-cover {{appliedMods.join(' ')}}">
+
+    <div class="chapter-cover__hero">
+
+        <div class="chapter-cover__image">
+            <publication-image [node]="imageNode" [viewParams]="{'fixedHeight': true, 'fixedWidth' : true, 'cropStrategy' : 'edges' }"></publication-image>
+        </div>
+
+        <div class="chapter-cover__title">
+
+            <div class="outer">
+                <div class="inner">
+
+                    <h2>
+                        <b><publication-simple-text [node]="titleNode1"></publication-simple-text></b>
+                        <br />
+                        <publication-simple-text [node]="titleNode2"></publication-simple-text>
+                    </h2>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="chapter-cover__intro">
+
+        <div class="outer">
+            <div class="inner">
+                <publication-formatted-text [node]="introNode"></publication-formatted-text>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

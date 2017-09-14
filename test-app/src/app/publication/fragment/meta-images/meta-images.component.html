@@ -1,0 +1,17 @@
+<div class="meta-images">
+
+    <div class="inner">
+
+        <div class="meta-images__body">
+
+            <ng-container *ngFor="let n of node.children">
+                <div class="meta-images__box">
+                    <kio-meta-image [stripStyles]="true" (innerHeightUpdate)="egalizeBodyHeights($event)" [node]="n" [minBodyHeight]="minBodyHeight"></kio-meta-image>
+                </div>
+            </ng-container>
+
+        </div>
+
+    </div>
+
+</div>

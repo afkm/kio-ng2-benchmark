@@ -1,0 +1,125 @@
+@import "../../../../scss/utils";
+
+
+.lightbox {
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    overflow: hidden;
+    align-content: center;
+    flex: 1;
+    flex-direction: column;
+
+    width: 0vw;
+    height: 0vh;
+
+    &.open {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.lightbox__background {
+    flex: 1;
+
+    background: rgba(0,0,0,0.7);
+}
+
+.lightbox__close {
+    position: absolute;
+    z-index: 20;
+    top: $row-gutter;
+    right: $column-gutter;
+
+    :host /deep/ & .ui-button {
+        width: rem-calc(70);
+        height: rem-calc(70);
+    }
+}
+
+.lightbox__content {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    // transition: top 300ms ease-in-out;
+}
+
+
+.lightbox__item {
+    position: absolute;
+    left: -100vw;
+
+    width: 100%;
+    height: 100%;
+
+    &.current {
+        left: 0;
+    }
+
+    // reset all possible labeled images
+    // get high specifity with triple classes
+
+    :host /deep/ & [class*="labeled-image"].is-not-stripped.is-not-stripped.is-not-stripped {
+        display: inline; // important for 100% height strategy
+
+        padding-top: 0;
+        padding-bottom: 0;
+
+        background: transparent;
+
+        .outer,
+        .inner {
+            height: 100%;
+        }
+
+        .inner {
+            width: 100% !important;
+            margin-left: 0 !important;
+        }
+
+        figcaption {
+            color: $color-font-bright;
+        }
+
+        .images-container {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            height: 100%;
+
+            publication-image {
+                position: relative;
+
+                flex: 1;
+
+                .image-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    background: transparent !important;
+
+                    img {
+                        position: relative;
+                        top: auto;
+                        left: auto;
+
+                        width: auto;
+                        height: auto;
+                    }
+                }
+
+            }
+            figcaption {
+                padding: rem-calc(20) column-calc(1);
+            }
+        }
+    }
+}

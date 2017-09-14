@@ -1,0 +1,37 @@
+<div class="newsticker" [ngClass]="{'is-animated' : loadedNodes.length >= 3}">
+
+    <div class="inner">
+
+        <div class="newsticker-lines">
+
+            <div>
+                <span>
+                    <publication-simple-text (onData)="loadedNodes.push(1)" [node]="line1"></publication-simple-text>
+                </span>
+                <span>
+                    <publication-simple-text [node]="line1"></publication-simple-text>
+                </span>
+            </div>
+            <br />
+            <div>
+                <span>
+                    <publication-simple-text (onData)="loadedNodes.push(2)" [node]="line2"></publication-simple-text>
+                </span>
+                <span>
+                    <publication-simple-text [node]="line2"></publication-simple-text>
+                </span>
+            </div>
+            <br />
+            <div>
+                <span>
+                    <publication-simple-text (onData)="loadedNodes.push(3)" [node]="line3"></publication-simple-text>
+                </span>
+                <span>
+                    <publication-simple-text [node]="line3"></publication-simple-text>
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+</div>

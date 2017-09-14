@@ -1,0 +1,15 @@
+html, body {
+    height: 100%;
+}
+
+.hide-small {
+    @media #{$small-only} {
+        display: none;
+    }
+}
+
+.hide-medium-up {
+    @media #{$medium-up} {
+        display: none;
+    }
+}

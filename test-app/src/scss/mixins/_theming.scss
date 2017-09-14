@@ -1,0 +1,61 @@
+
+@mixin color-chapters($color-bg: $color-background-default) {
+
+    .audio-player,
+    .chapter-cover__intro,
+    .gallery-grid,
+    .headline,
+    .labeled-image.is-not-stripped,
+    .labeled-image-with-zoom.is-not-stripped,
+    .meta-box,
+    .meta-image.is-not-stripped,
+    .meta-images,
+    .newsticker,
+    .quote,
+    .section-headline,
+    .single-column,
+    .single-column-collapsible,
+    .two-columns,
+    .two-columns-and-image,
+    .video {
+        background-color: $color-bg;
+    }
+
+    .audio-player__progress .mask {
+        @include circle-mask($color-bg);
+    }
+}
+
+
+@mixin alter-chapters($index) {
+
+    .section-headline {
+        // chapter 2 and 6
+        // not needed, is default style
+        // background-image: url(/assets/images/pattern-1.svg);
+
+        // chapter 3 and 5
+        @if $index % 2 == 0 {
+            background-image: url(/assets/images/pattern-2.svg);
+        }
+        // chapter 1, 4 and 7
+        @if $index % 3 == 0 {
+            background-image: url(/assets/images/pattern-3.svg);
+        }
+    }
+}
+
+
+
+component-router {
+
+    @for $i from 0 through 7 {
+
+        &.chapter-#{$i} {
+            background-color: map-get($colors-chapters, $i);
+
+            @include color-chapters(map-get($colors-chapters, $i));
+            @include alter-chapters($i);
+        }
+    }
+}

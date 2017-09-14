@@ -1,0 +1,15 @@
+<!-- <audio *ngIf="!!audioSrcs" controls #myAudio 
+(loadstart)="onAudioLoadstart($event)"
+(durationchange)="onAudioDurationchange($event)"
+(loadedmetadata)="onAudioLoadedmetadata($event)"
+(loadeddata)="onAudioLoadeddata($event)"
+(timeupdate)="onAudioProgress($event)"
+(canplay)="onAudioCanplay($event)"
+(ended)="onAudioEnded($event)"
+(play)="onAudioPlay($event)"
+(pause)="onAudioPause($event)"
+(canplaythrough)="onAudioCanplaythrough($event)" >
+    <source *ngFor="let audioSrc of audioSrcs" preload="true" [src]="audioSrc.url" [type]="audioSrc.mimeType" />
+        Your browser does not support the audio element.
+</audio>
+ -->

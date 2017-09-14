@@ -1,0 +1,43 @@
+.swiper-button-prev,
+.swiper-button-next {
+    top: 36%;
+
+    width: auto;
+    height: auto;
+    margin-top: 0;
+
+    background: none;
+
+    line-height: 0;
+
+    .ui-button {
+        width: rem-calc(57);
+        height: rem-calc(57);
+
+        @media #{$small-only} {
+            width: rem-calc(47);
+            height: rem-calc(47);
+        }
+    }
+}
+
+.swiper-button-prev {
+    left: rem-calc(20);
+
+    .ui-button {
+        transform: rotate(90deg);
+    }
+}
+.swiper-button-next {
+    right: rem-calc(20);
+
+    .ui-button {
+        transform: rotate(-90deg);
+    }
+}
+
+.swiper-button-prev.disabled,
+.swiper-button-next.disabled {
+    // opacity: 0.15;
+    display: none;
+}

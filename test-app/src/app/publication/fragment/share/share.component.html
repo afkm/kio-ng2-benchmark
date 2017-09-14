@@ -1,0 +1,52 @@
+<div class="share">
+
+    <div class="share--bottom g-push-3 g-drop-3">
+
+        <div class="inner">
+
+            <div class="col-1">
+
+                <p class="share-claim">
+                    <publication-simple-text [node]="node.childAt(0)"></publication-simple-text>
+                    <br />
+                    <em>
+                        <publication-simple-text [node]="node.childAt(1)"></publication-simple-text>
+                    </em>
+                </p>
+
+            </div>
+
+            <div class="col-2">
+
+                <ul class="share-links">
+                    <li *ngFor="let s of sharings" class="{{s.class}}">
+                        <a [href]="sanitize(s.composedUrl)" target="_blank">
+                            <ui-button [icon]="s.icon + '-flat'"></ui-button>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="share--sidebar">
+
+        <div class="inner">
+
+            <h3>{{'Share this digitorial' | translate}}</h3>
+
+            <ul class="share-links">
+                <li *ngFor="let s of sharings" class="{{s.class}}">
+                    <a [href]="sanitize(s.composedUrl)" target="_blank">
+                        <ui-button [icon]="s.icon + '-flat'"></ui-button>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>

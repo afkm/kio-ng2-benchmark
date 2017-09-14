@@ -1,0 +1,37 @@
+<div class="quote" #scrollTarget [ngClass]="{'is-in-viewport' : isInViewport}">
+
+    <div class="container">
+
+        <div class="outer">
+
+            <div class="inner">
+
+                <blockquote>
+
+                    <p>
+                        <publication-simple-text [node]="quoteNode"></publication-simple-text>
+                    </p>
+
+                    <cite [ngClass]="{'has-meta' : hasMeta}" (click)="showMeta = !showMeta" >
+
+                        <publication-simple-text [node]="citeNode"></publication-simple-text>
+
+                        <span class="meta" [hidden]="!(hasMeta && showMeta)">
+                            <publication-simple-text (onData)="setupMeta($event)" [node]="metaNode"></publication-simple-text>
+                        </span>
+
+                    </cite>
+
+                    <div class="deco">
+                        <ui-button [icon]="'quote'"></ui-button>
+                    </div>
+
+                </blockquote>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

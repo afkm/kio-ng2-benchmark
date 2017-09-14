@@ -1,0 +1,16 @@
+<nav class="sidebar-menu">
+
+    <h1>
+        <small>{{'Digitorial for the exhibition' | translate}}</small>
+        <span [innerHtml]="'Digitorial title' | translate"></span>
+    </h1>
+
+    <ol *ngIf="navigationItems">
+        <li *ngFor="let navigationItem of navigationItems; let idx=index" routerLinkActive="item-active" [ngClass]="'sitemap-state-'+navigationItem.state" >
+            <a (click)="onClick($event,navigationItem)" href="#">{{navigationItem.title | translate}}</a>
+            <div class="spinner" [inlineSVG]="'/assets/images/spinner.svg'"></div>
+        </li>
+    </ol>
+
+
+</nav>

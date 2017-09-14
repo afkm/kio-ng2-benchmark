@@ -1,0 +1,57 @@
+%common-labeled-image {
+    position: relative;
+    z-index: 1;
+
+    &.is-not-stripped {
+        background: $color-background-default;
+
+        @extend %reduced-paddings;
+
+        .outer {
+            @extend %g-rowcol;
+        }
+
+        .inner {
+            margin: 0 auto;
+
+            @media #{$small-only}{
+                margin: 0 $column-gutter*-1;
+            }
+
+            @media #{$large-up} {
+                width: column-calc(8);
+                margin-left: column-calc(2);
+            }
+        }
+
+        &.portrait {
+
+            .inner {
+                @media #{$large-up} {
+                    width: column-calc(6);
+                    margin-left: column-calc(3);
+                }
+            }
+        }
+    }
+
+    figcaption {
+        position: relative;
+
+        padding: $row-gutter/2 0;
+    }
+
+
+    &.is-not-stripped figcaption {
+        color: $color-font-bright;
+
+        :host /deep/ & publication-formatted-text * {
+            color: $color-font-bright;
+        }
+
+        @media #{$small-only} {
+            padding-right: $column-gutter;
+            padding-left: $column-gutter;
+        }
+    }
+}

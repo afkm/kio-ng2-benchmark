@@ -1,10 +1,10 @@
-import { TestAppPage } from './app.po';
+import { DigitWmrPage } from './app.po';
 
-describe('test-app App', () => {
-  let page: TestAppPage;
+describe('digit-wmr App', () => {
+  let page: DigitWmrPage;
 
   beforeEach(() => {
-    page = new TestAppPage();
+    page = new DigitWmrPage();
   });
 
   it('should display welcome message', () => {

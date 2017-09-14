@@ -1,0 +1,50 @@
+<div class="social">
+
+    <div class="social--bottom">
+
+        <div class="inner">
+
+            <h3>{{'Network with' | translate}}</h3>
+
+            <div class="social__links">
+
+                <ul class="social__linklist">
+                    <li *ngFor="let s of socials" class="{{s.class}}">
+                        <a href="{{s.urlKey | translate}}" target="_blank">
+                            <ui-button [icon]="s.icon"></ui-button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="social__hashtag">
+                <publication-simple-text [node]="node.childAt(0)"></publication-simple-text>
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="social--sidebar">
+
+        <div class="inner">
+
+            <h3>{{'Network with' | translate}}</h3>
+
+            <ul class="social__linklist">
+                <li *ngFor="let s of socials" class="{{s.class}}">
+                    <a href="{{s.urlKey | translate}}" target="_blank">
+                        <ui-button [icon]="s.icon"></ui-button>
+                    </a>
+                </li>
+            </ul>
+
+            <p class="social__hashtag">
+                <publication-simple-text [node]="node.childAt(0)"></publication-simple-text>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>

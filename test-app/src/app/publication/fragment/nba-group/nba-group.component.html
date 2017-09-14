@@ -1,0 +1,18 @@
+<section class="nba-group">
+
+    <div class="inner">
+
+        <h2>{{'About the exhibition' | translate}}</h2>
+
+        <ul>
+            <ng-container *ngFor="let nba of nbaList" >
+
+                <li>
+                    <kio-nba [node]="nba"></kio-nba>
+                </li>
+
+            </ng-container>
+        </ul>
+    </div>
+
+</section>

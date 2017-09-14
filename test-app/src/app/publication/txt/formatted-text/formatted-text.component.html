@@ -1,0 +1,4 @@
+<div class="formatted-text {{appliedMods.join(' ')}}">
+    <kio-markdown *ngIf="text" #markdownContent [source]="text" (rendered)="onMarkdownRendered($event)"></kio-markdown>
+    <!-- <p *ngIf="text" #markdownContent>{{ text }}</p> -->
+</div>

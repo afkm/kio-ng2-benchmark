@@ -1,0 +1,64 @@
+// names
+
+$white: #ffffff;
+$black: #000000;
+$gray: #878787;
+$red : red;
+
+$crimson: #EB0017; // kampagne rot
+$darkolivegreen: #927641; // kampagne braun
+
+$khaki: #E7C361;
+$cadetblue: #8BB3B3;
+$firebrick: #B91F23;
+$lightsalmon: #E2895D;
+$seagreen: #006D45;
+
+$floralwhite: #FAF8F0;
+
+// definitions
+
+$color-campaign: $crimson;
+$color-background-bright: $floralwhite;
+$color-background-dark: $black;
+$color-background-default: $darkolivegreen;
+
+$color-background-boot: $color-campaign;
+
+$color-marked-default: $color-campaign;
+
+$color-background-footer: $color-background-default;
+$color-background-sidebar: $color-background-dark;
+
+// typo
+
+$color-font-dark: $black;
+$color-font-bright: $floralwhite;
+$color-placeholder: $gray;
+$color-link: $color-campaign;
+$color-warning: $color-campaign;
+$color-font-campaign: $color-campaign;
+
+
+// chapters
+
+$chapter-1 : $darkolivegreen;
+$chapter-2 : $khaki;
+$chapter-3 : $cadetblue;
+$chapter-4 : $firebrick;
+$chapter-5 : $lightsalmon;
+$chapter-6 : $seagreen;
+$chapter-7 : $firebrick;
+
+
+$colors-chapters: (
+  0: $color-campaign,
+  1: $color-campaign,
+  2: $darkolivegreen,
+  3: $khaki,
+  4: $cadetblue,
+  5: $firebrick,
+  6: $lightsalmon,
+  7: $seagreen,
+  8: $firebrick
+);

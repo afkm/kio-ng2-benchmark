@@ -1,0 +1,45 @@
+<div class="meta-box" [ngClass]="{'is-open' : isOpen, 'has-additional' : additionalNode}">
+
+    <div class="outer">
+
+        <div class="inner">
+
+            <div class="meta-box__header">
+
+                <h2>
+                    <publication-simple-text [node]="titleNode"></publication-simple-text>
+                </h2>
+
+            </div>
+
+            <div class="meta-box__body">
+
+                <div class="inner" [style.height]="bodyHeight + 'px'">
+                    <div #metaboxInner>
+
+                        <div *ngIf="imageNode" class="meta-box__image">
+                            <kio-labeled-image [stripStyles]="true" [node]="imageNode" lbGroup="meta-box"></kio-labeled-image>
+                        </div>
+
+
+                        <div class="meta-box__text">
+                            <div>
+                                <publication-formatted-text [node]="textNode"></publication-formatted-text>
+                            </div>
+                            <div *ngIf="textNode2">
+                                <publication-formatted-text [node]="textNode2"></publication-formatted-text>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="meta-box__button">
+                    <ui-button [icon]="'plus-circle'"  (click)="toggleOpen()" ></ui-button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

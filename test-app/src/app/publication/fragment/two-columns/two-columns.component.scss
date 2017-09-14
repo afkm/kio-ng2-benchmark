@@ -1,0 +1,38 @@
+@import "../../../../scss/utils";
+
+
+.two-columns {
+    background: $color-background-default;
+
+    @extend %reduced-paddings;
+
+    > .inner {
+        @extend %g-row;
+
+        > div {
+            @extend %g-col;
+
+            @media #{$medium-up} {
+                width: column-calc(8);
+                margin-left: column-calc(1);
+            }
+
+            @media #{$large-up} {
+                width: column-calc(5.5);
+
+                &.col1 {
+                    margin-left: 0;
+                    padding-right: $column-gutter;
+                }
+                &.col2 {
+                    margin-left: column-calc(1);
+                    padding-left: $column-gutter;
+                }
+            }
+        }
+    }
+
+    :host /deep/ & publication-formatted-text * {
+        color: $color-font-bright;
+    }
+}
