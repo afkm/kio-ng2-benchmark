@@ -1,0 +1,160 @@
+@import "../../../../scss/utils";
+
+
+.social {
+    color: $color-font-bright;
+
+    ul.social__linklist {
+        display: flex;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        li {
+            flex: 1;
+        }
+
+        .ui-button {
+            width: rem-calc(40);
+            height: rem-calc(40);
+
+            background: transparent;
+
+            svg {
+                path {
+                    fill: $color-font-bright;
+                }
+            }
+        }
+    }
+
+
+    .social__hashtag {
+        margin: 0;
+
+        text-transform: uppercase;
+
+        color: $color-font-bright;
+
+        font-size: rem-calc(18);
+
+        @extend %default-sans-serif-black;
+
+        @media #{$medium-up} {
+            font-size: rem-calc(39);
+
+            .kio-sidebar & {
+                font-size: rem-calc(18);
+            }
+        }
+
+    }
+
+
+    .social--bottom {
+        padding: $row-gutter*3 0;
+
+        text-align: center;
+
+        background: $color-background-footer;
+
+        @media #{$small-only} {
+            display: none;
+        }
+
+        .kio-sidebar & {
+            display: none;
+        }
+
+        h3 {
+            margin-bottom: 0;
+
+            text-transform: uppercase;
+
+            font-size: rem-calc(39);
+
+            @extend %default-sans-serif-black;
+            @extend %schirn-minibar;
+
+            &:before {
+                margin: 0 auto rem-calc(50);
+            }
+        }
+
+        ul.social-links {
+            padding-top: $row-gutter/2;
+        }
+
+        .inner {
+            @extend %g-rowcol;
+        }
+
+        .social__links {
+            width: column-calc(3.5);
+            margin: $row-gutter auto $row-gutter*2.5;
+        }
+    }
+
+
+
+    .social--sidebar {
+        display: none;
+
+        padding: $row-gutter*2 $column-gutter;
+
+        text-align: center;
+        // border-top: 1px solid rgba($color-background-bright, 0.5);
+
+        border-bottom: 1px solid rgba($color-background-bright, 0.5);
+        background: $color-background-sidebar;
+
+        h3 {
+            margin-bottom: $row-gutter;
+
+            text-transform: uppercase;
+
+            color: $color-font-bright;
+
+            font-size: 2rem;
+
+            @extend %default-sans-serif-black;
+            @extend %schirn-minibar;
+
+            &:before {
+                margin-right: auto;
+                margin-bottom: $row-gutter*2;
+                margin-left: auto;
+            }
+        }
+
+        ul.social__linklist {
+            display: block;
+
+            margin-bottom: $row-gutter;
+
+            @extend %clearfix;
+
+            li {
+                display: inline-block;
+
+                margin: 0 $column-gutter/2;
+            }
+
+            .ui-button {
+                width: rem-calc(30);
+                height: rem-calc(30);
+
+                @media #{$medium-only} {
+                    width: rem-calc(40);
+                    height: rem-calc(40);
+                }
+            }
+        }
+
+        .kio-sidebar & {
+            display: block;
+        }
+    }
+}

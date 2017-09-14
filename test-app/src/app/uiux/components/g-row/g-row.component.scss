@@ -1,0 +1,48 @@
+@import '../../../../scss/utils';
+
+
+// Grid
+// ----------------------------------------------------------------------------
+
+/// 	<div class="g-row">
+/// 		<div class="g-col-* g-offset-* g-drop-* g-push-* ">
+/// 		</div>
+/// 	</div>
+
+
+.g-row {
+	margin: 0 auto;
+	padding: 0 $column-gutter / 2;
+	max-width: $container-width;
+
+	@extend %clearfix;
+
+	// @media #{$medium-up} {
+	// 	padding: 0 $column-gutter * 1.5;
+	// }
+
+	&.g-collapse {
+		padding-right: 0;
+		padding-left: 0;
+
+		> [class*="g-col"] {
+			padding-right: 0;
+			padding-left: 0;
+		}
+	}
+
+	&.g-fullwidth {
+		margin: 0 $column-gutter / -2;
+		padding-right: 0;
+		padding-left: 0;
+		max-width: none;
+	}
+
+	// nesting level 1
+
+	.g-row {
+		margin: 0 $column-gutter / -2;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}

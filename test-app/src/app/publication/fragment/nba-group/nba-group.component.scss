@@ -1,0 +1,80 @@
+@import "../../../../scss/utils";
+
+
+.nba-group {
+    padding: $row-gutter*3 0;
+
+    background: $color-background-footer;
+
+    .kio-sidebar & {
+        background: $color-background-sidebar;
+    }
+
+    .inner {
+        max-width: $container-width;
+        margin: 0 auto;
+        padding: 0 $column-gutter;
+    }
+
+
+    h2 {
+        margin-bottom: 0;
+
+        text-transform: uppercase;
+
+        color: $color-font-bright;
+
+        font-size: 2rem;
+
+        @extend %default-sans-serif-black;
+        @extend %schirn-minibar;
+
+        .kio-sidebar & {
+            display: block;
+
+            padding: 0;
+        }
+    }
+
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin: 0 $column-gutter/-2;
+        padding: 0;
+
+        list-style: none;
+
+        @extend %clearfix;
+
+        li {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            width: 100%;
+
+            &.hideme {
+                display: none !important;
+            }
+
+            @media #{$medium-up} {
+                width: 50%;
+
+                .kio-sidebar & {
+                    width: 100%;
+                }
+            }
+
+            @media #{$large-up} {
+                width: 33%;
+
+                .kio-sidebar & {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

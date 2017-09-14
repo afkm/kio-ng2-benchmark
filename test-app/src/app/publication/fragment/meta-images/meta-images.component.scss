@@ -1,0 +1,51 @@
+@import "../../../../scss/utils";
+
+.meta-images {
+    overflow: hidden;
+
+    padding-bottom: $row-gutter*3;
+
+    background: $color-background-default;
+
+    @extend %reduced-paddings;
+
+    @media #{$medium-up} {
+        padding-bottom: $row-gutter*5;
+    }
+
+    .inner {
+        @extend %g-rowcol;
+    }
+}
+
+
+.meta-images__body {
+    clear: both;
+
+    @media #{$medium-up} {
+        display: flex;
+        justify-content: center;
+
+        margin-right: $column-gutter*-1.5;
+        margin-left: $column-gutter*-1.5;
+    }
+}
+
+.meta-images__box {
+    padding: 0 $column-gutter/2;
+
+    @media #{$small-only} {
+        margin-bottom: $row-gutter*3.5;
+    }
+
+    @media #{$medium-up} {
+        flex: 1;
+
+        max-width: (1/2) * 100%;
+        padding: 0 $column-gutter*1.5;
+    }
+
+    @media #{$large-up} {
+        max-width: (1/3) * 100%;
+    }
+}

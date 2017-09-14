@@ -1,0 +1,43 @@
+<div class="single-column">
+
+    <div class="outer">
+
+        <div class="inner">
+
+
+            <ng-container *ngIf="!isCollapsible">
+                <publication-formatted-text [node]="textNode"></publication-formatted-text>
+            </ng-container>
+
+
+            <ng-container *ngIf="isCollapsible">
+
+                <div class="single-column__collapsible">
+
+                    <div class="container" [style.height]="containerHeight + 'px'">
+
+                        <div #collapsibleInner>
+
+                            <div class="body">
+                                <publication-formatted-text [node]="textNode"></publication-formatted-text>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <label (click)="toggleCollapse()">
+                        <span>
+                            Weiterlesen<br />
+                            <ui-button [icon]="'enter'"></ui-button>
+                        </span>
+                    </label>
+
+                </div>
+
+            </ng-container>
+
+        </div>
+
+    </div>
+
+</div>

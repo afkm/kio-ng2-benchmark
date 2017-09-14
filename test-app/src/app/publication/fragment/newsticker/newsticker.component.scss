@@ -1,0 +1,131 @@
+@import "../../../../scss/utils";
+
+
+.newsticker {
+    background: $color-background-default;
+
+    @extend %extended-paddings;
+
+    .inner {
+        position: relative;
+    }
+}
+
+.newsticker-lines {
+    overflow: hidden;
+
+    transition: opacity 0.5s ease-out 0s;
+    transform: rotate(-5deg) skew(-5deg);
+
+    opacity: 0;
+
+    will-change: opacity, transform;
+
+    .is-animated & {
+        opacity: 1;
+    }
+
+    > div {
+        position: relative;
+
+        display: inline-block;
+
+        transition: transform 10s linear 0s;
+        white-space: nowrap;
+
+        will-change: transform;
+
+        .is-animated & {
+            animation: tick 100s linear 0s infinite;
+        }
+
+        &:first-of-type {
+            transition-duration: 10s;
+            transform: translate(40vw, 0);
+
+            .is-animated & {
+                transform: translate(0,0);
+                animation-duration: 100s;
+                animation-delay: 10s;
+            }
+        }
+
+        &:nth-of-type(2) {
+            .is-animated & {
+                animation-duration: 70s;
+            }
+        }
+
+        &:last-of-type {
+            transition-duration: 10s;
+            transform: translate(-30vw, 0);
+
+            .is-animated & {
+                transform: translate(0,0);
+                animation-duration: 40s;
+                animation-delay: -10s;
+            }
+        }
+
+
+        > span {
+            display: inline-block;
+
+            margin: $row-gutter/8 $column-gutter/8;
+            padding: rem-calc(2);
+
+            transform: skew(5deg);
+            white-space: nowrap;
+            text-transform: uppercase;
+
+            color: $color-font-bright;
+            background: $color-background-dark;
+
+            font-size: rem-calc(34);
+            line-height: 0.9;
+
+            @extend %default-sans-serif-black;
+
+            @media #{$medium-up} {
+                margin: $row-gutter/4 $column-gutter/4;
+
+                font-size: rem-calc(128);
+            }
+
+            &:before,
+            &:after {
+                display: inline-block;
+
+                width: rem-calc(51);
+                height: rem-calc(22);
+
+                content: "";
+                vertical-align: baseline;
+
+                background: url(/assets/images/triplet.svg) no-repeat center center;
+                background-size: contain;
+
+                @media #{$medium-up} {
+                    width: rem-calc(192);
+                    height: rem-calc(83);
+                }
+            }
+
+
+            &:after {
+                transform: rotateY(-180deg);
+            }
+        }
+    }
+}
+
+@keyframes tick {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+    }
+}

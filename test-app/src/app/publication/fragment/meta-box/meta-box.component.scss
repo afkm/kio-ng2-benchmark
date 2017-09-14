@@ -1,0 +1,135 @@
+@import "../../../../scss/utils";
+
+
+.meta-box {
+    background: $color-background-default;
+
+    @extend %default-paddings;
+
+
+    > .outer {
+        @extend %g-row;
+
+        > .inner {
+            width: 100%;
+
+            @extend %g-col;
+
+            @media #{$small-only} {
+                padding-right: $column-gutter*1.5;
+            }
+
+            @media #{$medium-up} {
+                width: column-calc(8);
+                margin-left: column-calc(1);
+            }
+        }
+    }
+}
+
+
+.meta-box__header {
+    position: relative;
+    z-index: 10;
+
+    h2 {
+        margin-bottom: rem-calc(10);
+
+        text-transform: uppercase;
+
+        color: $color-font-bright;
+
+        font-size: rem-calc(26);
+        line-height: 1;
+
+        @extend %default-serif;
+
+        @media #{$medium-up} {
+            font-size: rem-calc(55);
+
+        }
+
+    }
+}
+
+
+.meta-box__body {
+    position: relative;
+    z-index: 0;
+
+    min-height: rem-calc(4);
+
+    background: $color-background-bright;
+
+    @media #{$medium-up} {
+        min-height: rem-calc(2);
+    }
+
+
+    > .inner {
+        overflow: hidden;
+
+        height: 0;
+
+        transition: height 0.2s ease-out 0s;
+
+        will-change: height;
+
+    }
+}
+
+.meta-box__image {
+
+    :host /deep/ &.meta-box__image.meta-box__image figcaption {
+        padding-right: $column-gutter*1.5;
+        padding-left: $column-gutter*1.5;
+        @media #{$medium-up} {
+            padding-right: $column-gutter*2;
+            padding-left: $column-gutter*2;
+        }
+    }
+}
+
+.meta-box__text {
+    margin: 0 $column-gutter*-1/2;
+    padding: $row-gutter*1.5 $column-gutter*1.5;
+
+    @media #{$medium-up} {
+        padding: $row-gutter*2 $column-gutter*2;
+    }
+
+    @media #{$large-up} {
+        display: flex;
+    }
+
+    > div {
+        padding: 0 $column-gutter/2;
+
+        @media #{$large-up} {
+            flex: 1;
+        }
+    }
+}
+
+
+
+.meta-box__button {
+    position: absolute;
+    z-index: 15;
+    top: 100%;
+    right: 0;
+
+    transition: transform 0.2s ease-out 0s;
+    transform: translate(50%, -50%);
+    transform-origin: 50% 50%;
+
+    will-change: transform;
+
+    .is-open & {
+        transform: translate(50%, -50%) rotate(45deg) ;
+
+        @media #{$small-only} {
+            display: none;
+        }
+    }
+}

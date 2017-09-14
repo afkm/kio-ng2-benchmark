@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "test-app"
+    "name": "digit-wmr"
   },
   "apps": [
     {
@@ -19,9 +19,10 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "../node_modules/swiper/dist/css/swiper.css",
+        "styles.scss"
       ],
-      "scripts": [],
+      "scripts": ["../node_modules/swiper/dist/js/swiper.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

@@ -1,0 +1,75 @@
+@import "../../../../scss/utils";
+
+
+.hint {
+    background: $color-background-dark;
+
+    @extend %default-paddings;
+
+    @media #{$small-only} {
+        overflow: hidden;
+    }
+
+    .inner {
+        @extend %g-row;
+    }
+}
+
+.hint__title {
+    @extend %g-rowcol;
+
+    h2 {
+        margin-bottom: 0.75em;
+
+        text-transform: uppercase;
+        hyphens: auto;
+
+        color: $color-font-bright;
+
+        font-size: rem-calc(90);
+        line-height: 0.9;
+
+        @extend %default-serif;
+        @media #{$medium-up} {
+            font-size: rem-calc(144);
+        }
+    }
+}
+
+.hint__image,
+.hint__text {
+    width: 100%;
+
+    @extend %g-col;
+}
+
+.hint__image {
+    padding-bottom: $row-gutter*2;
+
+    @media #{$medium-up} {
+        width: column-calc(6);
+    }
+
+    :host /deep/ & figcaption * {
+        color: $color-font-bright;
+    }
+}
+
+.hint__text {
+
+    @media #{$medium-up} {
+        width: column-calc(4.7);
+        margin-left: column-calc(1);
+    }
+
+    :host /deep/ & publication-formatted-text * {
+        color: $color-font-bright;
+
+        font-size: rem-calc(32);
+
+        @extend %default-sans-serif-bold;
+        @media #{$medium-up} {
+            font-size: rem-calc(36);
+        }
+    }
+}

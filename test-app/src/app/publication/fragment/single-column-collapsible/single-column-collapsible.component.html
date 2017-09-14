@@ -1,0 +1,34 @@
+<div class="single-column-collapsible" [ngClass]="{'is-collapsed' : isCollapsed}">
+
+    <div class="outer">
+
+        <div class="inner">
+
+            <div class="single-column-collapsible__collapsible">
+
+                <div class="container" [style.height]="containerHeight + 'px'">
+
+                    <div #collapsibleInner>
+
+                        <div class="body">
+                            <publication-formatted-text [node]="textNode"></publication-formatted-text>
+                        </div>
+                    </div>
+
+                </div>
+
+                <label (click)="toggleCollapse()">
+                    <span>
+                        {{'Continue reading' | translate}}<br />
+                        <ui-button [icon]="'enter'"></ui-button>
+                    </span>
+                </label>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

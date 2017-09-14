@@ -1,0 +1,95 @@
+@import "../../../../scss/utils";
+
+
+.copyrights {
+    padding: $row-gutter 0;
+
+    background: $color-background-footer;
+
+    * {
+        color: $color-font-bright;
+    }
+}
+
+.copyrights__nav {
+    padding: $row-gutter 0;
+
+    border-top: 1px solid rgba($color-font-bright, 0.5);
+
+
+    @media #{$medium-up} {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    p, ul, li, a {
+        text-decoration: none;
+
+        font-size: rem-calc(18);
+
+        @extend %default-sans-serif;
+
+        @media #{$medium-only} {
+            font-size: rem-calc(22);
+        }
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        @media #{$medium-only} {
+            text-align: right;
+        }
+
+        li {
+            display: inline-block;
+
+            cursor: pointer;
+            &:after {
+                margin: 0 $column-gutter/4;
+
+                content: "|";
+            }
+
+            &:last-child {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @media #{$small-only} {
+        p, ul {
+            margin-bottom: $row-gutter;
+        }
+    }
+}
+
+.copyrights__body {
+    padding: $row-gutter*4 0;
+
+    h3 {
+        margin-bottom: 1.5em;
+
+        text-transform: uppercase;
+
+        font-size: rem-calc(26);
+        font-weight: normal;
+
+        @extend %default-sans-serif;
+
+        @media #{$medium-up} {
+            font-size: rem-calc(40);
+        }
+    }
+}

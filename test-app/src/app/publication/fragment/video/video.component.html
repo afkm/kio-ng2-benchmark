@@ -1,0 +1,26 @@
+<div class="video" #scrollTarget [ngClass]="{'is-in-viewport' : isInViewport}">
+
+    <div class="outer">
+        <div class="inner">
+
+            <h3 class="video__headline">
+                <publication-simple-text [node]="headingNode"></publication-simple-text>
+                <span></span>
+            </h3>
+
+            <div class="video__embed" *ngIf="!!videoNode" [style.paddingTop]="1 / getRatio() * 100 + '%'">
+
+                <publication-video [node]="videoNode" (stateChanges)="updateVideoState($event)" [playing]="playing"></publication-video>
+
+                <div class="video__playbutton" *ngIf="!playing" (click)="startPlaying($event)">
+                    <ui-button [icon]="'play-circle'"></ui-button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

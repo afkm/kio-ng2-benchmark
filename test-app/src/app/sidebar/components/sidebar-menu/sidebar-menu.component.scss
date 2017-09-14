@@ -1,0 +1,77 @@
+@import '../../../../scss/utils';
+
+
+.sidebar-menu {
+    padding: $row-gutter*2 $column-gutter;
+
+    * {
+        color: $color-font-bright;
+    }
+
+    h1 {
+        margin-bottom: $row-gutter*1.5;
+
+        text-transform: uppercase;
+
+        font-size: 2rem;
+        line-height: 1;
+
+        @extend %schirn-minibar;
+        @extend %default-sans-serif-black;
+        small {
+            display: block;
+
+            margin-bottom: 0.2em;
+
+            text-transform: none;
+
+            font-size: 0.5em;
+            line-height: 1;
+        }
+    }
+    ol {
+        margin: 0;
+        padding: 0 0 0 1.4em;
+
+        list-style-position: outside;
+        @media #{$medium-only} {
+            padding-left: 2em;
+        }
+
+        li {
+            margin-bottom: $row-gutter/2;
+
+            font-size: rem-calc(22);
+
+            @extend %default-sans-serif;
+
+            @media #{$medium-only} {
+                font-size: rem-calc(29);
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .spinner {
+                display: none;
+            }
+
+            &.sitemap-state-1 {
+                .spinner {
+                    display: inline;
+                    svg {
+                        width: rem-calc(10);
+                        height: rem-calc(10);
+
+                        animation: spin 2s linear 0s infinite;
+                        path {
+                            stroke: $color-font-bright;
+                            fill: $color-font-bright;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

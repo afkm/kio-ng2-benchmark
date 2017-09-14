@@ -1,0 +1,166 @@
+@import "../../../../scss/utils";
+
+.big-pic {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    height: 100%;
+}
+
+.big-pic__date {
+    position: absolute;
+    z-index: 5;
+    top: rem-calc(88);
+    left: 0;
+
+    width: 100%;
+
+    @media #{$medium-up} {
+        top: rem-calc(210);
+    }
+    @media #{$large-up} {
+        top: rem-calc(170);
+    }
+
+    .inner {
+        @extend %g-rowcol;
+    }
+
+    p {
+        text-transform: uppercase;
+
+        color: $color-font-bright;
+
+        font-size: rem-calc(20);
+        line-height: 1;
+
+        @extend %default-sans-serif-black;
+        @media #{$medium-up} {
+            font-size: rem-calc(53)
+        }
+        @media #{$large-up} {
+            font-size: rem-calc(40)
+        }
+    }
+}
+
+.big-pic__title {
+    position: relative;
+    z-index: 5;
+
+    margin-bottom: $row-gutter*7;
+    .inner {
+        @extend %g-rowcol;
+    }
+
+    h2 {
+        position: relative;
+    }
+}
+
+.big-pic__digit-title {
+    display: block;
+
+    width: 100%;
+    height: rem-calc(100);
+
+    @media #{$medium-up} {
+        width: rem-calc(950);
+        height: rem-calc(310);
+        margin-left: column-calc(2.5);
+    }
+
+    span {
+        position: absolute;
+        left: -1000em;
+    }
+
+    :host /deep/ & publication-image .image-container {
+        background: transparent !important;
+
+        img {
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.big-pic__digit-subtitle {
+    position: absolute;
+    right: 0;
+    bottom: 105%;
+
+    width: rem-calc(120);
+
+    text-align: right;
+    text-transform: uppercase;
+
+    font-size: rem-calc(22);
+    line-height: 1;
+
+    @extend %default-serif;
+
+    @media #{$medium-up} {
+        bottom: 90%;
+
+        width: 34%;
+
+        text-align: center;
+
+        font-size: rem-calc(48);
+    }
+}
+
+.big-pic__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    :host /deep/ & publication-image .image-container {
+        background: transparent !important;
+    }
+
+    &.back {
+        z-index: 3;
+    }
+    &.front {
+        z-index: 7;
+
+        display: none;
+    }
+}
+
+.big-pic__action {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    background: map-get($colors-chapters, 0);
+
+    @media #{$small-only} {
+        padding-bottom: $row-gutter;
+    }
+    a {
+        display: block;
+
+        transform: translate(0, -50%);
+    }
+}
+
+#big-pic-end {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

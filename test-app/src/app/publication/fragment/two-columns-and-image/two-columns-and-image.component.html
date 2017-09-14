@@ -1,0 +1,22 @@
+<div class="two-columns-and-image {{appliedMods.join(' ')}}" [ngClass]="{'portrait' : imageRatio < 1}">
+
+    <div class="outer">
+
+        <div class="inner">
+
+            <div [ngClass]="{'type--txt' : firstNode && firstNode.type === 'txt'}">
+                <component-router *ngIf="firstNode && firstNode.type !== 'txt'" [node]="firstNode"></component-router>
+                <publication-formatted-text *ngIf="firstNode && firstNode.type === 'txt'" [node]="firstNode"></publication-formatted-text>
+            </div>
+
+            <div [ngClass]="{'type--txt' : secondNode && secondNode.type === 'txt'}">
+                <component-router *ngIf="secondNode && secondNode.type !== 'txt'" [node]="secondNode"></component-router>
+                <publication-formatted-text *ngIf="secondNode && secondNode.type === 'txt'" [node]="secondNode"></publication-formatted-text>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

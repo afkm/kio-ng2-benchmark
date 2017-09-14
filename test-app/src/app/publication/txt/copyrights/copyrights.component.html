@@ -1,0 +1,32 @@
+<div class="copyrights" id="copyrights">
+
+    <g-row>
+
+        <g-col [medium]="12">
+
+            <div class="copyrights__nav">
+
+                <p>{{ 'Copyrights' | translate }}</p>
+
+
+                <ul>
+                    <li><a target="_blank" [href]="'Privacy Policy URL' | translate">{{ 'Privacy Policy' | translate }}</a></li>
+                    <li><a target="_blank" [href]="'Imprint URL' | translate">{{ 'Imprint' | translate }}</a></li>
+                    <li (click)="showCopyrights()">{{ 'Credits' | translate }}</li>
+                </ul>
+
+            </div>
+
+
+            <div class="copyrights__body" [hidden]="!show" id="copyrights__body">
+
+                <publication-formatted-text [node]="node"></publication-formatted-text>
+
+            </div>
+
+
+        </g-col>
+
+    </g-row>
+
+</div>

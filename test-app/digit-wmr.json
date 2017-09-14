@@ -1,0 +1,355 @@
+{
+  "name": "digit-wmr",
+  "rootModule": {
+    "filepath": "/Volumes/Macintosh HD 2/Development/Projects/afkm/kio/digit-dev/digit-wmr",
+    "name": "digit-wmr",
+    "children": [
+      {
+        "name": "kio-ng2-audio",
+        "filepath": "/Volumes/Macintosh HD 2/Development/Projects/afkm/kio/digit-dev/digit-wmr/node_modules/kio-ng2-audio",
+        "version": "0.0.1"
+      },
+      {
+        "filepath": "/Volumes/Macintosh HD 2/Development/Projects/afkm/kio/digit-dev/digit-wmr/node_modules/kio-ng2-cli",
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/afkmatze/kio-ng2-cli.git"
+        },
+        "name": "kio-ng2-cli",
+        "version": "0.1.2"
+      },
+      {
+        "name": "kio-ng2-component-routing",
+        "filepath": "/Volumes/Macintosh HD 2/Development/Projects/afkm/kio/digit-dev/digit-wmr/node_modules/kio-ng2-component-routing",
+        "version": "0.0.8"
+      },
+      {
+        "filepath": "/Volumes/Macintosh HD 2/Development/Projects/afkm/kio/digit-dev/digit-wmr/node_modules/kio-ng2-data",
+        "repository": {
+          "type": "git",
+          "url": "git+ssh://git@github.com/afkmatze/kio-ng2.git"
+        },
+        "name": "kio-ng2-data",
+        "version": "0.0.1"
+      },
+      {
+        "filepath": "/Volumes/Macintosh HD 2/Development/Projects/afkm/kio/digit-dev/digit-wmr/node_modules/kio-ng2-env",
+        "repository": {
+          "type": "git",
+          "url": "git+ssh://git@github.com/afkmatze/kio-ng2-env.git"
+        },
+        "name": "kio-ng2-env",
+        "version": "0.0.6"
+      },
+      {
+        "name": "kio-ng2-markdown",
+        "filepath": "/Volumes/Macintosh HD 2/Development/Projects/afkm/kio/digit-dev/digit-wmr/node_modules/kio-ng2-markdown",
+        "version": "0.0.3"
+      },
+      {
+        "filepath": "/Volumes/Macintosh HD 2/Development/Projects/afkm/kio/digit-dev/digit-wmr/node_modules/kio-ng2-markdown-extension",
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/afkmatze/kio-ng2-markdown-extension.git"
+        },
+        "name": "kio-ng2-markdown-extension",
+        "version": "0.0.0"
+      },
+      {
+        "filepath": "/Volumes/Macintosh HD 2/Development/Projects/afkm/kio/digit-dev/digit-wmr/node_modules/kio-ng2-markdown-footnotes",
+        "repository": {
+          "type": "git",
+          "url": "git@dergoldenefoehn.de:/opt/git/kio-ng2-markdown-footnotes.git"
+        },
+        "name": "kio-ng2-markdown-footnotes",
+        "version": "0.0.1"
+      }
+    ],
+    "version": "0.0.0"
+  },
+  "lastBuild": {
+    "buildTime": "2017-08-21T16:21:14.452Z",
+    "buildCount": 0,
+    "buildMachine": {
+      "release": "16.7.0",
+      "username": "tEErohr",
+      "arch": "x64",
+      "host": "Macintosh.fritz.box",
+      "type": "Darwin"
+    },
+    "buildRepository": {
+      "commit": {
+        "hash": "3033df8",
+        "message": "initial setup with angular core and digitorial clone of rfn v0.0.3"
+      },
+      "branch": {
+        "commit": "3033df8",
+        "current": true,
+        "message": "initial setup with angular core and digitorial clone of rfn v0.0.3",
+        "name": "master"
+      }
+    }
+  },
+  "folders": {
+    "root": "./src/app",
+    "components": {
+      "structure": "./src/app/component-routing/components",
+      "navigation": "./src/app/navigation/components",
+      "publication": "./src/app/publication"
+    }
+  },
+  "components": [
+    {
+      "name": "Audioplayer",
+      "type": "fragment",
+      "childTypes": [
+        "txt",
+        "src",
+        "txt"
+      ],
+      "modifiers": [
+        "audio"
+      ]
+    },
+    {
+      "name": "BigPic",
+      "type": "fragment",
+      "childTypes": [
+        "txt",
+        "txt",
+        "src",
+        "src",
+        "src"
+      ],
+      "modifiers": [
+        "big-pic"
+      ]
+    },
+    {
+      "name": "ChapterCover",
+      "type": "fragment",
+      "childTypes": [
+        "src",
+        "txt",
+        "txt",
+        "txt"
+      ],
+      "modifiers": {
+        "contains": [
+          "chapter-cover"
+        ]
+      }
+    },
+    {
+      "name": "GalleryGrid",
+      "type": "fragment",
+      "childTypes": {
+        "all": [
+          "fragment"
+        ]
+      },
+      "modifiers": [
+        "gallery",
+        "grid"
+      ]
+    },
+    {
+      "name": "Headline",
+      "type": "fragment",
+      "childTypes": [
+        "txt"
+      ],
+      "modifiers": [
+        "headline"
+      ]
+    },
+    {
+      "name": "Hint",
+      "type": "fragment",
+      "childTypes": [
+        "txt",
+        "fragment",
+        "txt"
+      ],
+      "modifiers": [
+        "hint"
+      ]
+    },
+    {
+      "name": "LabeledImage",
+      "type": "fragment",
+      "childTypes": [
+        "src",
+        "txt",
+        "txt"
+      ],
+      "modifiers": []
+    },
+    {
+      "name": "MetaBox",
+      "type": "fragment",
+      "childTypes": {
+        "contains": [
+          "txt",
+          "txt"
+        ]
+      },
+      "modifiers": [
+        "metabox"
+      ]
+    },
+    {
+      "name": "MetaImage",
+      "type": "fragment",
+      "childTypes": [
+        "src",
+        "txt",
+        "txt",
+        "txt"
+      ],
+      "modifiers": [
+        "metabox"
+      ]
+    },
+    {
+      "name": "MetaImages",
+      "type": "fragment",
+      "childTypes": {
+        "all": [
+          "fragment"
+        ]
+      },
+      "modifiers": [
+        "metabox"
+      ]
+    },
+    {
+      "name": "Nba",
+      "type": "fragment",
+      "childTypes": [
+        "txt",
+        "src",
+        "txt",
+        "txt",
+        "txt"
+      ],
+      "modifiers": {
+        "contains": [
+          "nba"
+        ]
+      }
+    },
+    {
+      "name": "NbaGroup",
+      "type": "fragment",
+      "childTypes": {
+        "all": [
+          "fragment"
+        ]
+      },
+      "modifiers": [
+        "nba"
+      ]
+    },
+    {
+      "name": "Newsticker",
+      "type": "fragment",
+      "childTypes": [
+        "txt",
+        "txt",
+        "txt"
+      ],
+      "modifiers": [
+        "ticker"
+      ]
+    },
+    {
+      "name": "Quote",
+      "type": "fragment",
+      "childTypes": [
+        "txt",
+        "txt",
+        "txt"
+      ],
+      "modifiers": [
+        "quote"
+      ]
+    },
+    {
+      "type": "fragment",
+      "name": "SectionHeadline",
+      "modifiers": [
+        "headline",
+        "section"
+      ],
+      "childTypes": [
+        "txt",
+        "txt"
+      ]
+    },
+    {
+      "type": "fragment",
+      "name": "Share",
+      "modifiers": [
+        "share"
+      ],
+      "childTypes": [
+        "txt",
+        "txt"
+      ]
+    },
+    {
+      "name": "SingleColumn",
+      "type": "fragment",
+      "childTypes": [
+        "txt"
+      ],
+      "modifiers": {
+        "contains": []
+      }
+    },
+    {
+      "type": "fragment",
+      "name": "Social",
+      "modifiers": [
+        "social"
+      ],
+      "childTypes": [
+        "txt"
+      ]
+    },
+    {
+      "name": "TwoColumns",
+      "type": "fragment",
+      "childTypes": {
+        "deepEqual": [
+          "txt",
+          "txt"
+        ]
+      },
+      "modifiers": []
+    },
+    {
+      "name": "TwoColumnsAndImage",
+      "type": "fragment",
+      "childTypes": {
+        "contains": [
+          "txt",
+          "fragment"
+        ]
+      },
+      "modifiers": []
+    },
+    {
+      "name": "Video",
+      "type": "fragment",
+      "childTypes": [
+        "src",
+        "txt"
+      ],
+      "modifiers": [
+        "video"
+      ]
+    }
+  ]
+}

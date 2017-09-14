@@ -1,0 +1,44 @@
+<div class="gallery-grid">
+
+    <div class="gallery-grid__mobile" *ngIf="swiperConfig">
+
+        <swiper [config]="swiperConfig" #usefulSwiper>
+
+            <div class="swiper-wrapper">
+
+                <ng-container *ngFor="let n of itemNodes">
+                    <div class="swiper-slide">
+                        <kio-labeled-image [stripStyles]="true" [node]="n"></kio-labeled-image>
+                    </div>
+                </ng-container>
+
+            </div>
+
+
+            <div class="swiper-button-prev" (click)="prev()" [ngClass]="{'disabled' : !!swiperIsBeginning}">
+                <ui-button [icon]="'enter'"></ui-button>
+            </div>
+            <div class="swiper-button-next" (click)="next()" [ngClass]="{'disabled' : !!swiperIsEnd}">
+                <ui-button [icon]="'enter'"></ui-button>
+            </div>
+
+        </swiper>
+
+    </div>
+
+
+    <div class="gallery-grid__desktop">
+
+        <div class="inner" [style.height]="calcedHeight + 'px'">
+
+            <ng-container *ngFor="let n of itemNodes; let i = index">
+                <div class="gallery-grid__item" #galleryItem>
+                    <kio-labeled-image (imageLoad)="onItemLoaded(i)" [stripStyles]="true" [node]="n" [lightbox]="true" lbGroup="gallery-grid"></kio-labeled-image>
+                </div>
+            </ng-container>
+
+        </div>
+
+    </div>
+
+</div>

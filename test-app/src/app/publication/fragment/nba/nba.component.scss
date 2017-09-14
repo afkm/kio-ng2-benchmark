@@ -1,0 +1,128 @@
+@import "../../../../scss/utils";
+
+
+.nba {
+    padding-top: $row-gutter * 3;
+    padding-right: $column-gutter/2;
+    padding-left: $column-gutter/2;
+
+    * {
+        color: $color-font-bright;
+    }
+
+    @media #{$medium-up} {
+        padding-bottom: rem-calc(100);
+    }
+
+    .image {
+        position: relative;
+
+        padding-top: 55.75%;
+
+        > div {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    h3 {
+        margin-bottom: $row-gutter/4;
+
+        text-transform: uppercase;
+
+        font-weight: normal;
+
+        @extend %default-sans-serif;
+    }
+
+    h3, figcaption, p {
+        font-size: rem-calc(20);
+
+        .kio-sidebar & {
+            font-size: rem-calc(15);
+        }
+
+        @media #{$medium-only} {
+            font-size: rem-calc(26);
+
+            .kio-sidebar & {
+                font-size: rem-calc(20);
+            }
+        }
+    }
+
+    figure, img {
+        display: block;
+
+        width: 100%;
+    }
+
+    figcaption {
+        margin-bottom: $row-gutter;
+        padding-top: rem-calc(5);
+
+        text-align: left;
+
+        * {
+            font-style: normal;
+            line-height: $global-line-height * 1.1;
+
+            @extend %default-sans-serif;
+        }
+    }
+
+    .cta {
+        display: inline-block;
+
+        margin-bottom: $row-gutter * 1.5;
+        padding: .8rem 1.2rem;
+
+        text-decoration: none;
+        text-transform: uppercase;
+
+        border: 1px solid $color-font-bright;
+
+        font-size: rem-calc(17);
+
+        @extend %default-sans-serif-bold;
+
+        @media #{$medium-only} {
+            font-size: rem-calc(23);
+        }
+
+        &:hover {
+            background: $color-font-bright;
+
+            * {
+                color: $color-font-dark !important;
+            }
+
+            svg {
+                path {
+                    fill: $color-font-dark;
+                }
+            }
+        }
+
+        .kio-sidebar & {
+            padding: 0.5rem 0.7rem;
+
+            font-size: rem-calc(15);
+
+            @media #{$medium-only} {
+                font-size: rem-calc(20);
+            }
+        }
+
+
+        @media #{$medium-up} {
+            position: absolute;
+            bottom: 0;
+            left: $column-gutter/2;
+        }
+    }
+}

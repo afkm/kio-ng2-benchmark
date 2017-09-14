@@ -1,0 +1,13 @@
+<div class="ui-sharing-dropdown" [ngClass]="{'is-open' : isOpen}">
+
+    <ui-button (click)="toggle()" [icon]="'share'"></ui-button>
+
+    <ul>
+        <li *ngFor="let s of sharings" class="{{s.class}}">
+            <a [href]="sanitize(s.composedUrl)" target="_blank">
+                <ui-button [icon]="s.icon"></ui-button>
+            </a>
+        </li>
+    </ul>
+
+</div>

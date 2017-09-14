@@ -1,0 +1,99 @@
+@import "../../../../scss/utils";
+
+
+.two-columns-and-image {
+    background: $color-background-default;
+
+    @extend %reduced-paddings;
+
+    // reset all possible labeled images
+    // get high specifity with triple classes
+
+    :host /deep/ & [class*="labeled-image"].is-not-stripped.is-not-stripped.is-not-stripped {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        background: transparent;
+
+        .outer {
+            @extend %g-row-reset;
+        }
+        .inner {
+            width: auto;
+
+            @media #{$large-up} {
+                margin-left: auto;
+            }
+        }
+
+        figcaption {
+            color: $color-font-bright;
+        }
+    }
+
+    > .outer {
+        padding: 0;
+
+        @extend %g-rowcol;
+
+        > .inner {
+
+            @media #{$medium-only} {
+                width: column-calc(10);
+                margin: 0 auto;
+            }
+
+            @media #{$large-up} {
+                display: flex;
+                align-items: top;
+            }
+
+            > div {
+                padding: 0 $column-gutter;
+
+                @media #{$large-up} {
+                    width: 50%;
+                }
+
+                &:first-child {
+                    padding-bottom: $row-gutter;
+                    @media #{$large-up} {
+                        padding-bottom: 0;
+                    }
+                }
+
+
+                &.type--txt {
+                    @media #{$large-up} {
+                        padding-right: $column-gutter*2;
+                        padding-left: $column-gutter*2;
+                    }
+                }
+            }
+        }
+    }
+
+
+    :host /deep/ & publication-formatted-text {
+        color: $color-font-bright;
+    }
+
+    &.portrait {
+        > .outer > .inner > div {
+            &:not(.type--txt) {
+                @media #{$large-up} {
+                    width: 37%;
+                }
+            }
+        }
+    }
+
+
+    &.reverse {
+        > .outer > .inner {
+            @media #{$large-up} {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}

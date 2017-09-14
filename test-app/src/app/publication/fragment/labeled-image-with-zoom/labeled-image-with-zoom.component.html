@@ -1,0 +1,40 @@
+<figure class="labeled-image-with-zoom" [ngClass]="{'portrait' : imageRatio < 1, 'is-stripped' : stripStyles, 'is-not-stripped' : !stripStyles}" #scrollTarget>
+
+    <div class="outer">
+
+        <div class="inner">
+
+            <div class="images-container">
+
+                <div class="images">
+                    <div class="zoom-image" [style.transform-origin]="transformOrigin" [style.transform]="transform">
+                        <publication-image [viewParams]="{'multiplier': imageMultiplier, useNativeDimensions : true}" [node]="imageNode"></publication-image>
+                    </div>
+                </div>
+
+                <figcaption>
+
+                    <div (click)="showMeta = !showMeta" [ngClass]="{'has-meta' : hasMeta}">
+
+                        <publication-formatted-text [node]="captionNode"></publication-formatted-text>
+
+                        <span class="meta" [hidden]="!(hasMeta && showMeta)">
+                            <publication-simple-text (onData)="setupMeta($event)" [node]="metaNode"></publication-simple-text>
+                        </span>
+
+                    </div>
+
+
+                    <div class="action" (click)="toggleZoom()" [ngClass]="{'is-zoomed' : isZoomed}">
+                        <ui-button [icon]="'enter'"></ui-button>
+                    </div>
+
+                </figcaption>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</figure>

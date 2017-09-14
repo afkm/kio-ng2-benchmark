@@ -1,0 +1,25 @@
+@import "../../../../scss/utils";
+
+
+.single-column {
+    background: $color-background-default;
+
+    @extend %reduced-paddings;
+
+    > .outer {
+        @extend %g-row;
+
+        > .inner {
+            @extend %g-col;
+
+            @media #{$medium-up} {
+                width: column-calc(7);
+                margin-left: column-calc(2);
+            }
+        }
+    }
+
+    :host /deep/ & publication-formatted-text * {
+        color: $color-font-bright;
+    }
+}

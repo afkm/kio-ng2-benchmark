@@ -1,0 +1,4 @@
+@mixin circle-mask($color: $color-background-default) {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20220%20220%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A#{encodecolor($color)}%3B%7D%3C/style%3E%3C/defs%3E%3Ctitle%3EElement%201%3C/title%3E%3Cg%20id%3D%22Ebene_2%22%20data-name%3D%22Ebene%202%22%3E%3Cg%20id%3D%22Ebene_1-2%22%20data-name%3D%22Ebene%201%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M109.91%2C0a109.9%2C109.9%2C0%2C1%2C1%2C0%2C219.81h0A109.91%2C109.91%2C0%2C0%2C1%2C0%2C109.9V220H220V0Z%22/%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M109.91%2C0H0V109.9A109.9%2C109.9%2C0%2C0%2C1%2C109.91%2C0Z%22/%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M109.91%2C200.44h0A90.54%2C90.54%2C0%2C1%2C0%2C19.37%2C109.9%2C90.54%2C90.54%2C0%2C0%2C0%2C109.91%2C200.45Z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+}

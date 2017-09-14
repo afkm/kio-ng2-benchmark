@@ -1,0 +1,54 @@
+@import "../../../../scss/utils";
+
+.gallery-grid {
+    background: $color-background-default;
+
+    @extend %default-paddings;
+
+}
+
+.gallery-grid__mobile {
+
+    :host /deep/ & .labeled-image {
+        figcaption {
+            margin: 0 $column-gutter;
+
+            color: $color-font-bright;
+        }
+    }
+
+    @media #{$medium-up} {
+        display: none;
+    }
+}
+
+.gallery-grid__desktop {
+
+    @media #{$small-only} {
+        display: none;
+    }
+
+    .inner {
+        position: relative;
+
+        display: flex;
+        overflow: hidden;
+        align-items: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        max-width: rem-calc($max-size-desktop);
+        margin: 0 auto;
+    }
+}
+
+.gallery-grid__item {
+    width: (1/3) * 100%;
+
+    :host /deep/ & .labeled-image {
+        figcaption {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<div class="lightbox" [ngClass]="{'open': (lightboxState === 1)}">
+
+    <div class="lightbox__background">
+
+        <div class="lightbox__container" *ngIf="!!group">
+
+            <a class="lightbox__close" href="#closeme" (click)="close($event)">
+                <ui-button [icon]="'close'"></ui-button>
+            </a>
+
+            <!-- <h3>{{ group.name }}</h3> -->
+
+            <div class="lightbox__content" #content>
+
+                <div class="lightbox__item" #lightboxItem *ngFor="let node of (group.items); let i = index" [ngClass]="{'current' : i === index}">
+
+                    <component-router [node]="node" componentName="labeled-image" [viewParams]="{'fixedHeight': true, 'fixedWidth': true, 'fitStrategy' : 'clip', 'bouncing': false }" ></component-router>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+<div class="audio-player" [ngClass]="{'is-playing' : play}">
+
+    <div class="outer">
+        <div class="inner">
+
+            <publication-audio [node]="audioNode"
+            (onProgress)="updateProgress($event)"
+            (onMetadata)="updateMetadata($event)"
+            (onStateChange)="updateState($event)"
+            [play]="play&&ready"></publication-audio>
+
+            <div class="audio-player__ui">
+
+
+                <div class="audio-player__info">
+                    <h2><publication-simple-text [node]="titleNode"></publication-simple-text></h2>
+                    <p>
+                        <publication-simple-text [node]="descNode"></publication-simple-text><br />
+                    </p>
+                </div>
+
+                <p class="audio-player__time">
+                    <!-- <small>{{time | formatTime}} / {{duration | formatTime}}</small> -->
+                    <small>{{time | formatTime}}</small>
+                </p>
+
+
+                <div class="audio-player__button-and-progress">
+                    <div class="audio-player__button" (click)="play = !play">
+                        <ui-button [icon]="'play'" [hidden]="play"></ui-button>
+                        <ui-button [icon]="'pause'" [hidden]="!play"></ui-button>
+                    </div>
+
+                    <div class="audio-player__progress" [ngClass]="{'first-half' : progress <= 0.5, 'second-half' : progress > 0.5}">
+                        <div class="right" [style.transform]="'rotate(' + 360 * progress + 'deg)'"></div>
+                        <div class="left" [style.transform]="'rotate(' + 360 * (progress - 0.5) + 'deg)'"></div>
+                        <div class="mask"></div>
+                    </div>
+                </div>
+
+                <!-- <span [style.width]="progress * 100 + '%'"></span> -->
+            </div>
+
+        </div>
+    </div>
+
+</div>

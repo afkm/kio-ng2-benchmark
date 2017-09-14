@@ -1,0 +1,49 @@
+@import "../../../../scss/utils";
+
+
+.labeled-image-with-zoom {
+    @extend %common-labeled-image;
+
+    .images {
+        position: relative;
+
+        overflow: hidden;
+    }
+    .zoom-image {
+        transition: transform 1s ease-out 0s;
+        transform: scale(1);
+        transform-origin: 50% 50%;
+
+        will-change: transform;;
+    }
+
+    figcaption {
+        position: relative;
+        @media #{$small-only} {
+            padding-right: rem-calc(90) !important;
+        }
+    }
+
+    .action {
+        position: absolute;
+        top: rem-calc(-30);
+        right: $column-gutter/2;
+
+        transition: transform 0.2s ease-out 0s;
+        transform: rotateY(180deg);
+
+        line-height: 0;
+
+        @media #{$medium-up} {
+            display: none;
+        }
+
+        &.is-zoomed {
+            transform: none;
+        }
+
+        :host /deep/ & .ui-button {
+            transform: rotate(-90deg);
+        }
+    }
+}

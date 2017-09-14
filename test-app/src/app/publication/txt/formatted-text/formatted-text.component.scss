@@ -1,0 +1,84 @@
+@import "../../../../scss/utils";
+
+.formatted-text {
+
+    &.initial:not(.intro) {
+        p:first-child {
+            &:first-letter {
+                @extend %wmr-inital;
+            }
+        }
+    }
+
+    &.intro:not(.initial) {
+        p:first-child {
+            @extend %wmr-introtext;
+        }
+    }
+
+    &.intro.initial {
+        p:first-child {
+            @extend %wmr-introtext;
+        }
+        p:nth-child(2) {
+            &:first-letter {
+                @extend %wmr-inital;
+            }
+        }
+    }
+}
+
+.footnote-head {
+    white-space: nowrap;
+
+    &.collapsed {
+
+        &:before {
+            display: inline-block;
+
+            width: rem-calc(17);
+            height: rem-calc(23);
+            margin: 0 rem-calc(5) rem-calc(5);
+
+            content: "";
+            transform: rotate(-90deg);
+            vertical-align: middle;
+
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+
+    + span {
+        position: relative;
+
+        display: block;
+
+        padding: $row-gutter*1.5 $column-gutter*2;
+
+        font-size: rem-calc(15);
+        line-height: (19/13);
+
+        @extend %default-sans-serif;
+
+        &:before {
+            position: absolute;
+            top: $column-gutter*1.4;
+            left: $column-gutter*0.75;
+
+            width: rem-calc(15);
+            height: rem-calc(20);
+
+            content: "";
+            transform: rotate(90deg);
+
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &.collapsed + span {
+        display: none;
+    }
+}

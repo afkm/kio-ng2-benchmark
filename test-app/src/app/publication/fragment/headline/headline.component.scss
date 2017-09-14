@@ -1,0 +1,27 @@
+@import "../../../../scss/utils";
+
+
+.headline {
+    overflow: hidden;
+
+    padding-bottom: $row-gutter;
+
+    background: $color-background-default;
+
+    @extend %reduced-paddings;
+
+    .outer {
+        @extend %g-row;
+    }
+    .inner {
+        width: 100%;
+
+        @extend %g-col;
+    }
+
+
+}
+
+.headline__text {
+    @extend %wmr-underlined-headline;
+}
