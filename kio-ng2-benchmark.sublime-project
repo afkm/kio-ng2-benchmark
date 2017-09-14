@@ -1,0 +1,18 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+      "folder_exclude_patterns": [
+        "node_modules",
+        "test-app"
+      ]
+		},
+		{
+			"path": "test-app",
+      "folder_exclude_patterns": [
+        "node_modules"
+      ]
+		}
+	]
+}
